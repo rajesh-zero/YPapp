@@ -1,0 +1,153 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Channel.master.cs" Inherits="User_Channel_Channel" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="../../bootstrap3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../bootstrap3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../Scripts/jquery-3.1.1.js"></script>
+    <script src="../../Scripts/bootstrap.js"></script>
+    <link href="../../styles/StyleSheet.css" rel="stylesheet" />
+    <script src="../../styles/JavaScript.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapper">
+            <%--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">--%>
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-brand">
+                            <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle" style="color:black;">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                            <a href="../../Default.aspx">YouPaper</a>
+                        </div>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse" style="overflow: hidden;">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="../../Default.aspx">Home</a></li>
+                            <%--<li><a href="#">Trending</a></li>
+                            <li><a href="#">Subscriptions</a></li>--%>
+                        </ul>
+                          <div id="NotLogged" runat="server">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="../../RegisterLogin/Register.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;Sign Up</a></li>
+                                <li><a href="../../RegisterLogin/Login.aspx"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Login</a></li>
+                            </ul>
+                        </div>
+                        <div id="LoggedIn" runat="server" visible="false">
+                            <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account
+        <span class="caret"></span></a>                              
+                                <ul class="dropdown-menu">
+                                    <li><a href="../Profile/ProfilePage.aspx">Profile Page</a></li>
+                                    <li><a href="../../TOS.aspx">Terms Of Service</a></li>
+                                    <li><a href="../../PrivacyPolicy.aspx">Privacy Policy</a></li>
+                                    <li><a href="../../RegisterLogin/Logout.aspx"><div id="logoutMenu" runat="server">Logout</div></a></li>
+                                </ul>                              
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="col-sm-2 col-md-3 pull-right">
+                            <div class="navbar-form">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" name="search" id="search" />
+                                    <div class="input-group-btn">
+                                        <button OnServerClick="btnSearch_OnClick" runat="server" class="btn btn-default" type="submit">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </nav>
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <nav id="spy">
+                    <ul class="sidebar-nav nav">
+                        <li class="sidebar-brand">
+                            <a href="../Profile/ProfilePage.aspx"><span class="fa fa-home solo">My Profile</span></a>
+                        </li>
+                        <li>
+                            <a href="../../ChooseChannel.aspx">
+                                <span class="solo">Write Article</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../ChooseChannelForDB.aspx">
+                                <span class="solo">Dashboard</span>
+                            </a>
+                        </li>
+                        <%--<li>
+                            <a href="../WriteArticle.aspx">
+                                <span class="fa fa-anchor solo">Write Article</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#anch2">
+                                <span class="fa fa-anchor solo">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#anch3">
+                                <span class="fa fa-anchor solo">Anchor 3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#anch4">
+                                <span class="fa fa-anchor solo">Anchor 4</span>
+                            </a>
+                        </li>--%>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Page content -->
+            <div id="page-content-wrapper">
+                <div id="page-content">
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                    </asp:ContentPlaceHolder>
+                </div>
+                </div>
+             </div>
+                <!-- Page footer -->
+            <div>
+                <footer>
+                    <div class="container col-md-12">
+                        <hr/>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-md-8">
+                                    <a href="../../TOS.aspx">Terms of Service</a> | <a href="../../PrivacyPolicy.aspx">Privacy</a> | <a href="../../ContactUs.aspx">Contact Us</a>
+                                </div>
+                                <div class="col-md-4">
+                                    <p class="muted pull-right">YouPaper © 2017. All rights reserved</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            </div>
+        </form>
+</body>
+</html>

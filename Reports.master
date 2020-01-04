@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Reports.master.cs" Inherits="Reports" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="crystalreportviewers13/js/crviewer/crv.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div style="margin:25px;">
+        <form id="form1" runat="server">
+            <asp:Button ID="Button4" runat="server" Text="Admin Panel" OnClick="Button4_Click" />&nbsp;
+        <asp:Button ID="Button1" runat="server" Text="User Report" OnClick="Button1_Click" />&nbsp;
+        <asp:Button ID="Button2" runat="server" Text="Channel Report" OnClick="Button2_Click" />&nbsp;
+        <asp:Button ID="Button3" runat="server" Text="Article Report" OnClick="Button3_Click" />&nbsp;
+        <br />
+            <hr />
+            <br />
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    </div>
+    
+</body>
+</html>
